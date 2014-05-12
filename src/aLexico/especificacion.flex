@@ -1,5 +1,5 @@
 // imports de java
-
+package aLexico;
 %%
 // opciones de jflex
 

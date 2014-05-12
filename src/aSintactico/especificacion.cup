@@ -1,35 +1,13 @@
-// CUP specification for a simple expression evaluator (no actions)
+/* package e imports */
 package aSintactico;
 import java_cup.runtime.*;
 
-/* Preliminaries to set up and use the scanner.  */
-init with {: scanner.init();              :};
-scan with {: return scanner.next_token(); :};
+/* Instrucciones para el parser (init with, scan with, parser code)  */
 
-/* Terminals (tokens returned by the scanner). */
-terminal            SEMI, PLUS, MINUS, TIMES, DIVIDE, MOD;
-terminal            UMINUS, LPAREN, RPAREN;
-terminal Integer    NUMBER;
+/* Declaración de terminales */
 
-/* Non terminals */
-non terminal            expr_list, expr_part;
-non terminal Integer    expr, term, factor;
+/* Declaración de no terminales */
 
-/* Precedences */
-precedence left PLUS, MINUS;
-precedence left TIMES, DIVIDE, MOD;
-precedence left UMINUS;
+/* Precedencias */
 
-/* The grammar */
-expr_list ::= expr_list expr_part | 
-              expr_part;
-expr_part ::= expr SEMI;
-expr      ::= expr PLUS expr 
-            | expr MINUS expr  
-            | expr TIMES expr  
-            | expr DIVIDE expr  
-            | expr MOD expr 
-	    | MINUS expr %prec UMINUS
-            | LPAREN expr RPAREN
-	    | NUMBER
-	    ;
+/* Gramática */

@@ -29,7 +29,6 @@
     
         <!-- Objetivo para la generación de los analizadores de JFlex y CUP-->
 	<target name="-pre-compile">
-                <echo message="HOLAAAAAA ${rutaAbsolutaProyecto}"/>
                 <jflex file="src/aLexico/especificacion.flex" />
 		<cup srcfile="${rutaAbsolutaProyecto}/src/aSintactico/especificacion.cup" destdir="${rutaAbsolutaProyecto}/src"/>
 	</target>
